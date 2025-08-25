@@ -1,2 +1,5 @@
 Flask
 jieba
+requests
+beautifulsoup4
+tqdm
