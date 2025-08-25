@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天记录分析器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>聊天记录深度分析</h1>
+            <p>通过数据洞察对话模式与兴趣</p>
+        </header>
+
+        <div class="controls">
+            <label for="timeRange">时间范围:</label>
+            <select id="timeRange">
+                <option value="all">全部</option>
+                <option value="week">最近一周</option>
+                <option value="month">最近一月</option>
+            </select>
+
+            <label for="analysisType">分析对象:</label>
+            <select id="analysisType">
+                <option value="both">全部对话</option>
+                <option value="user">用户提问</option>
+                <option value="ai">AI 回复</option>
+            </select>
+
+            <button id="analyzeBtn">开始分析</button>
+        </div>
+
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>总对话数</h3>
+                <span id="totalConversations">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>平均长度</h3>
+                <span id="avgLength">0 字</span>
+            </div>
+            <div class="stat-card">
+                <h3>最高频标签</h3>
+                <span id="topTag">N/A</span>
+            </div>
+            <div class="stat-card">
+                <h3>时间跨度</h3>
+                <span id="timeSpan">N/A</span>
+            </div>
+        </div>
+
+        <div class="analysis-results">
+            <div class="wordcloud-section">
+                <h2>高频词云</h2>
+                <div id="wordcloud" class="wordcloud-container"></div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>兴趣分布</h3>
+                    <canvas id="interestChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>对话趋势</h3>
+                    <canvas id="timeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>内容长度分布</h3>
+                    <canvas id="lengthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="detailed-stats">
+                <h2>详细统计</h2>
+                <div class="stats-grid">
+                    <div class="stats-item">
+                        <h4>热门词汇 Top 20</h4>
+                        <div id="topWords"></div>
+                    </div>
+                    <div class="stats-item">
+                        <h4>热门标签</h4>
+                        <div id="tagStats"></div>
+                    </div>
+                    <div class="stats-item">
+                        <h4>情感倾向</h4>
+                        <div id="sentimentStats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>正在进行深度分析，请稍候...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
