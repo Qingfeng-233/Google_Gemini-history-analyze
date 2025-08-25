@@ -36,14 +36,26 @@
     - 它会读取 `data_pipeline.py` 生成的 `processed_history.json` 文件，并为您提供一个可视化的分析界面。
 
 ---
-
+## 前期准备-记录导出
+1.进入账号详细信息
+2.进入数据和隐私设置
+3.找到“下载或删除您的数据”并点击进入下一页面
+4.先取消全选，再选择
+Gemini
+您的 Gemini Gem 数据，包括名称和指令
+和
+我的活动
+您的活动数据记录（包括图片和音频附件）
+（在“我的活动记录”内容选项里面仅选择Gemini Apps即可）
+5.打开gmail邮箱等待到官方的邮件选择下载
+6.找到我的活动记录.html并备用
 ## 🛠️ 安装与设置
 
 **1. 克隆项目**
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Qingfeng-233/Google_Gemini-history-analyze.git
+cd Google_Gemini-history-analyze
 ```
 
 **2. 安装依赖**
@@ -51,11 +63,8 @@ cd your-repo-name
 确保您已安装 Python 3.x。然后安装两个部分所需的库：
 
 ```bash
-# 安装数据处理流水线的依赖
+# 安装依赖
 pip install -r requirements.txt
-
-# 安装 Web 分析应用的依赖
-pip install -r 聊天记录分析/requirements.txt
 ```
 
 **3. 配置文件**
@@ -98,13 +107,6 @@ python app.py
 - 终端会显示服务已在 `http://127.0.0.1:5000` 上运行。
 - 在您的浏览器中打开此地址，即可看到您的个人聊天分析报告！
 
----
-
-## 🔒 安全与隐私
-
-- **您的数据，您的电脑**: 本项目完全在本地运行。您的聊天记录和 API 密钥不会被发送到任何第三方服务器。
-- **`.gitignore`**: 项目已配置好 `.gitignore` 文件，以确保 `valid_keys.txt`, `*.json`, `*.html` 等包含您个人数据和密钥的文件不会被 Git跟踪或上传。
-- **Flask 调试模式**: Web 应用默认在调试模式下运行，这在本地分析时非常方便。**请勿在生产环境中部署并开启调试模式**。
 
 ---
 
